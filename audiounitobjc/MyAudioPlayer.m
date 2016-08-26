@@ -32,10 +32,6 @@ static OSStatus callback(void * inRefCon,
                          UInt32 inNumberFrames, 
                          AudioBufferList * ioData)
 {
-    /*
-        (inRefCon: UnsafeMutablePointer<Void>, ioActionFlags: UnsafeMutablePointer<AudioUnitRenderActionFlags>, inTimeStamp: UnsafePointer<AudioTimeStamp>, inBusNumber: UInt32, inNumberFrames: UInt32, ioData: UnsafeMutablePointer<AudioBufferList>)
-        in
-     */
     MyAudioPlayer* myAudioPlayer = (__bridge MyAudioPlayer *)inRefCon;
     [myAudioPlayer render:inNumberFrames :ioData];
     return noErr;
